@@ -2,57 +2,41 @@
 <html lang="mn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>eMongolia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eMongolia Intro</title>
   <style>
-    /* Splash Screen Styles */
-    #splash-screen {
-      background-color: #1D4F91;
-      color: white;
-      height: 100vh;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #splash {
       width: 100vw;
+      height: 100vh;
+      background: url('image.png') no-repeat center center;
+      background-size: cover;
       position: fixed;
       top: 0;
       left: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       z-index: 9999;
-    }
-
-    #splash-screen img {
-      width: auto;
-      height: auto;
-      
-    }
-
-    /* Main Content (сайтын үндсэн хэсэг) */
-    #main-content {
-      display: none; /* эхэндээ нуусан байна */
-      padding: 20px;
-      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
-  <!-- Splash screen -->
-  <div id="splash-screen">
-    <img src="image.png" alt="eMongolia Logo" />
+  <div id="splash"></div>
+
+  <!-- Гол контент хэсэг -->
+  <div id="main-content" style="display:none;">
+    <!-- Энд үндсэн хуудсаа хий -->
+    <h1>Нүүр хуудасны контент</h1>
   </div>
 
-  <!-- Үндсэн агуулга -->
-  <div id="main-content">
-    <h1>eMongolia</h1>
-
-  </div>
-
-  <!-- Javascript for splash screen -->
   <script>
-    setTimeout(function () {
-      document.getElementById('splash-screen').style.display = 'none';
+    // 5 секундийн дараа зураг устаж үндсэн хуудас гарч ирнэ
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
-    }, 5000); // 5 секунд
+    }, 5000);
   </script>
 </body>
 </html>
