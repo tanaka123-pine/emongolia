@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Профайл</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card-container {
+      position: relative;
+      width: 380px;
+      height: auto;
+    }
+
+    .card-background {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .info-overlay {
+      position: absolute;
+      top: 30px;
+      left: 25px;
+      color: #000;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    .info-overlay img {
+      width: 90px;
+      height: 110px;
+      border-radius: 5px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .info-line {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <!-- Арын зураг -->
+    <img src="ariin zurag.jfif" alt="Иргэний үнэмлэх фон" class="card-background" />
+
+    <!-- Давхарласан мэдээлэл -->
+    <div class="info-overlay">
+      <img src="user.jpg" alt="Хэрэглэгчийн зураг" />
+      <div class="info-line">Овог: Даадаржамбa</div>
+      <div class="info-line">Эцэг/эх-ийн нэр: Баатархүү</div>
+      <div class="info-line">Нэр: Амгаланбаатар</div>
+      <div class="info-line">Хүйс: Эрэгтэй</div>
+      <div class="info-line">Төрсөн: 2008-02-29</div>
+      <div class="info-line">Регистр: 141459103979</div>
+    </div>
+  </div>
+</body>
+</html>
