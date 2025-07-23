@@ -52,6 +52,7 @@
       overflow: hidden;
       margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      cursor: pointer;
     }
 
     .info-block {
@@ -114,46 +115,142 @@
     .scan-button img {
       width: 26px;
     }
+
+    /* ==== Modal style ==== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .modal-box {
+      background-color: #fff;
+      border-radius: 20px 20px 0 0;
+      padding: 16px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .modal-drag-line {
+      width: 40px;
+      height: 5px;
+      background: #ccc;
+      border-radius: 10px;
+      margin: 0 auto 8px;
+    }
+
+    .modal-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .order-btn {
+      background-color: #2979ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 16px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="emongolia-logo.png" alt="eMongolia" />
-    <span style="font-size:18px; font-weight:bold; color:#333;">mongolia</span>
+    <img src="shineicmongolia.jpg" alt="eMongolia" />
   </div>
   <div class="notif-menu">
-    <img src="bell.png" alt="Мэдэгдэл" width="22" />
-    <img src="menu.png" alt="Цэс" width="24" />
+    <img src="notify.png" alt="Мэдэгдэл" width="22" />
+    <img src="download.jpg" alt="Цэс" width="24" />
   </div>
 </header>
 
 <div class="content">
   <h2>Миний бичиг баримтууд</h2>
-  <img class="id-card" src="your-id-card.png" alt="Иргэний үнэмлэх" />
+  <img class="id-card" src="amgaa.jpg" alt="Иргэний үнэмлэх" />
 
   <h2>Төрд байгаа миний мэдээлэл</h2>
 
   <div class="info-block">
-    <img src="survey.png" alt="icon" />
+    <img src="reload.png" alt="icon" />
     Санал асуулга
   </div>
   <div class="info-block">
-    <img src="chingis.png" alt="icon" />
+    <img src="hot.png" alt="icon" />
     "Чингис Хаан" Үндэсний баялгийн сан
   </div>
   <div class="info-block">
-    <img src="insurance.png" alt="icon" />
+    <img src="zurh.png" alt="icon" />
     Нийгмийн даатгалын мэдээлэл
   </div>
   <div class="info-block">
-    <img src="pension.png" alt="icon" />
+    <img src="bicigbarimt.png" alt="icon" />
     Миний тэтгэврийн мөнгөн хуримтлал
   </div>
   <div class="info-block">
-    <img src="loan.png" alt="icon" />
+    <img src="bicigbarimt.png" alt="icon" />
     Зээлийн мэдээлэл
+  </div>
+</div>
+
+<!-- Modal цонх -->
+<div id="idCardModal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-drag-line"></div>
+      <h3>Иргэний үнэмлэх</h3>
+    </div>
+    <img src="amgaa.jpg" alt="Иргэний үнэмлэх" class="modal-image" />
+    <div class="modal-actions">
+      <button class="order-btn">Дахин захиалах</button>
+      <button class="close-btn" onclick="closeModal()">Хаах</button>
+    </div>
   </div>
 </div>
 
@@ -174,6 +271,24 @@
     <img src="user.png" alt="Профайл" /><br>Профайл
   </a>
 </nav>
+
+<!-- Modal ажиллуулах JS -->
+<script>
+  function openModal() {
+    document.getElementById("idCardModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("idCardModal").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const cardImg = document.querySelector(".id-card");
+    if (cardImg) {
+      cardImg.addEventListener("click", openModal);
+    }
+  });
+</script>
 
 </body>
 </html>
