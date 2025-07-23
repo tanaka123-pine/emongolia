@@ -16,7 +16,7 @@
       background: #f5f9ff;
     }
 
-    /* --- Splash --- */
+    /* Splash */
     #splash {
       width: 100vw;
       height: 100vh;
@@ -28,7 +28,7 @@
       z-index: 9999;
     }
 
-    /* --- Header --- */
+    /* Header */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -39,11 +39,9 @@
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
+      height: 32px;
+      width: auto;
     }
-    .logo span { color: #1664f6; }
-    .logo p { font-size: 12px; margin: 0; color: gray; }
 
     .top-icons img {
       width: 30px;
@@ -52,7 +50,7 @@
       border-radius: 50%;
     }
 
-    /* --- Search --- */
+    /* Search */
     .search-section {
       text-align: center;
       padding: 20px;
@@ -84,7 +82,7 @@
       width: 18px;
     }
 
-    /* --- Weather --- */
+    /* Weather */
     .weather-card {
       display: flex;
       justify-content: space-between;
@@ -100,7 +98,7 @@
       text-align: center;
     }
 
-    /* --- Cards --- */
+    /* Cards */
     .quick-access {
       padding: 20px;
     }
@@ -126,7 +124,7 @@
       margin-bottom: 10px;
     }
 
-    /* --- Bottom nav --- */
+    /* Bottom nav */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -171,12 +169,26 @@
       height: 30px;
     }
 
-    /* --- Profile section --- */
+    /* Profile section */
     #profile-section {
       display: none;
-      width: auto;
-      height: auto;
       text-align: center;
+    }
+
+    #profile-section h3 {
+      margin-bottom: 10px;
+    }
+
+    #profile-section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    #profile-section p {
+      font-size: 14px;
+      color: #333;
     }
   </style>
 </head>
@@ -188,14 +200,14 @@
   <div id="main-content" style="display:none;">
     <!-- Header -->
     <header class="top-bar">
-      <img src="emongolia.png" alt="">
+      <img src="emongolia.png" alt="emongolia logo" class="logo">
       <div class="top-icons">
         <img src="notify.png" alt="bell"/>
         <img src="user.png" alt="user"/>
       </div>
     </header>
 
-    <!-- Нүүр хуудасны хэсэг -->
+    <!-- Нүүр хэсэг -->
     <section id="home-section">
       <section class="search-section">
         <h2>Танд ямар үйлчилгээ хэрэгтэй вэ?</h2>
@@ -237,18 +249,21 @@
       </section>
     </section>
 
-    <!-- Profile -->
+    <!-- Профайл хэсэг -->
     <section id="profile-section">
-      <span><p>Миний бичиг баримтууд</p><p>Шинэчлэх <img src="reload.png" alt=""></p></span>
-      
-      <img src="zassanzurag.png" alt="profile">
-      
+      <div style="padding: 20px;">
+        <h3>Миний бичиг баримтууд</h3>
+        <p style="text-align: right;">
+          Шинэчлэх <img src="reload.png" alt="" style="width: 14px; vertical-align: middle;">
+        </p>
+        <img src="zassanzurag.png" alt="profile ID">
+      </div>
     </section>
 
     <!-- Bottom nav -->
     <nav class="bottom-nav">
       <a href="#" class="nav-item" onclick="showHome()">
-        <img src="home.png"     /><br>Нүүр
+        <img src="home.png" alt="Нүүр"/><br>Нүүр
       </a>
       <a href="#" class="nav-item">
         <img src="apps.png" alt="Үйлчилгээ"/><br>Үйлчилгээ
