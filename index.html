@@ -169,12 +169,7 @@
       height: 30px;
     }
 
-    /* Profile section */
-    #profile-section {
-      display: none;
-      padding: 20px;
-    }
-
+    /* Info items */
     .info-item {
       background: #f1f6fd;
       padding: 12px 16px;
@@ -183,7 +178,6 @@
       color: #1a1a1a;
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-
   </style>
 </head>
 <body>
@@ -201,7 +195,7 @@
       </div>
     </header>
 
-    <!-- Нүүр хэсэг -->
+    <!-- Home -->
     <section id="home-section">
       <section class="search-section">
         <h2>Танд ямар үйлчилгээ хэрэгтэй вэ?</h2>
@@ -243,15 +237,51 @@
       </section>
     </section>
 
-    <!-- Профайл хэсэг -->
-    <section id="profile-section">
+    <!-- Profile -->
+    <section id="profile-section" style="display: none; padding: 20px;">
       <h3 style="margin-bottom: 10px;">Миний бичиг баримтууд</h3>
       <p style="text-align: right; color: #1664f6; font-size: 14px; font-weight: 500;">
         Шинэчлэх <img src="reload.png" alt="" style="width: 14px; vertical-align: middle;">
       </p>
 
-      <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 15px;">
-        <img src="idcard.png" alt="irgenii unemleh" style="width: 100%; border-radius: 10px;">
+      <div style="
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        background-image: url('301f0725-eaae-476b-83f0-2ea2a37371f4.png');
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+      ">
+        <div style="
+          position: absolute;
+          top: 30px;
+          left: 20px;
+          color: #000;
+          font-weight: bold;
+        ">
+          <p>НЭР: Бат-Эрдэнэ</p>
+          <p>РД: УБ99112233</p>
+        </div>
+
+        <div style="
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          color: #000;
+        ">
+          <label for="dob" style="font-size: 14px;">📅 Төрсөн огноо:</label><br/>
+          <input id="dob" type="text" placeholder="Жишээ: 2004/03/06" style="
+            margin-top: 5px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+          ">
+        </div>
       </div>
 
       <h4 style="margin-top: 20px;">Төрд байгаа миний мэдээлэл</h4>
@@ -286,7 +316,7 @@
 
   <!-- JS -->
   <script>
-    // Splash 3 секунд дараа алга болгох
+    // Splash 3 секунд дараа
     setTimeout(() => {
       document.getElementById('splash').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
