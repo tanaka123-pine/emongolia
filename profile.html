@@ -197,6 +197,44 @@
       text-decoration: underline;
       cursor: pointer;
     }
+    .card-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 16px;
+}
+
+.flip-card {
+  display: block;
+  width: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+#flip-toggle:checked + .flip-card {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-side img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
   </style>
 </head>
 <body>
@@ -246,13 +284,28 @@
       <div class="modal-drag-line"></div>
       <h3>Иргэний үнэмлэх</h3>
     </div>
-    <img src="amgaa.jpg" alt="Иргэний үнэмлэх" class="modal-image" />
+
+    <!-- Flip иргэний үнэмлэх -->
+    <div class="card-container">
+      <input type="checkbox" id="flip-toggle" hidden>
+      <label for="flip-toggle" class="flip-card">
+        <div class="card-side front">
+          <img src="1.jfif" alt="Урд тал" />
+        </div>
+        <div class="card-side back">
+          <img src="2.jfif" alt="Ард тал" />
+        </div>
+      </label>
+    </div>
+
     <div class="modal-actions">
       <button class="order-btn">Дахин захиалах</button>
       <button class="close-btn" onclick="closeModal()">Хаах</button>
     </div>
   </div>
 </div>
+
+
 
 <nav class="bottom-nav">
   <a href="index.html">
