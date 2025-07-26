@@ -1,24 +1,22 @@
-const cacheName = 'emongolia-cache-v1';
-const filesToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png',
-  // бас шаардлагатай файлууд
-];
-
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(cacheName)
-      .then((cache) => cache.addAll(filesToCache))
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open("v1").then((cache) => {
+      return cache.addAll([
+        "/",
+        "/index.html",
+        "/manifest.json",
+        "/style.css",
+        "/emongolia.png",
+        "/emongolia.png"
+      ]);
+    })
   );
 });
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request)
-      .then((response) => response || fetch(e.request))
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
